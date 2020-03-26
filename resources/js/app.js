@@ -7,7 +7,9 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-
+import VueSlideBar from 'vue-slide-bar'
+import VueSlider from 'vue-slider-component'
+import 'vue-slider-component/theme/default.css'
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -21,6 +23,9 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('form-component', require('./components/FormComponent.vue').default);
+Vue.component('profile-component', require('./components/ProfileComponent.vue').default);
+Vue.component('VueSlideBar', VueSlideBar);
+Vue.component('VueSlider', VueSlider)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

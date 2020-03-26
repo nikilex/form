@@ -1,8 +1,7 @@
 <template>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-6">
-        
+      <div class="col-6">      
           <div class="form-group">
             <label for="name">Имя</label>
             <input type="text" class="form-control" id="name" v-model="name" name="name" placeholder="Введите имя" />
@@ -45,6 +44,7 @@ export default {
             message: '',
             email:'',
             sendTo: 0,
+            rows: [],
             
         };
     },

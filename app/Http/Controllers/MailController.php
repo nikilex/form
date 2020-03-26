@@ -20,7 +20,7 @@ class MailController extends Controller
             case 0:
                 $data = array('name' => $request->name, 'phone' => $request->phone, 'mess' => $request->message);
                 Mail::send('mail', $data, function ($message) {
-                    $message->to($this->email, 'Tutorials Point')->subject('Форма обратной связи');
+                    $message->to($this->email, $this->email)->subject('Форма обратной связи');
                     $message->from('formtoenvy@yandex.ru', 'Алексей Никитин');
                 });
                 return $data;
