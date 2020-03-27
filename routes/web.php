@@ -22,3 +22,9 @@ Route::post('/send', 'MailController@send')->name('send');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('generate', 'GenerateController@index')->name('generate');
+
+Route::post('getShortUrl', 'GenerateController@getShortUrl')->name('getShortUrl');
+
+Route::get('/{code}', 'GenerateController@redirect');
