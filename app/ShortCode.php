@@ -28,10 +28,20 @@ class ShortCode extends Model
             ->first();
     }
 
+    public static function generateCode($length = 6){
+        $chars = 'abdefhiknrstyzABDEFGHKNQRSTYZ23456789';
+        $numChars = strlen($chars);
+        $string = '';
+        for ($i = 0; $i < $length; $i++) {
+            $string .= substr($chars, rand(1, $numChars) - 1, 1);
+        }
+        return $string;
+    }
+
     public static function generateUrl(){ 
         do {
-            $code = substr(md5(microtime() . rand(0, 9999)), 0, 6);
-            $exist = self::where('shortCode', $code )->exists();
+            $code = self::generateCode();
+            $exist = self::where('shortCode', $code)->exists();
         } while ($exist);
         
         return $code;
